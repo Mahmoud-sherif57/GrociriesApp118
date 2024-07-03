@@ -1,0 +1,19 @@
+{
+  "getStared" : "Get Started",
+  "getYourGroceriesInAsFastAsOneHour" : "Get your groceries in as fast as one hour",
+  "logIn" : "Log in",
+  "signUp" : "sign up",
+  "enterYourPassword" : "Enter Your Password",
+  "email"  : "Email",
+  "password": "Password",
+  "forgetPassword?" : "forget password?",
+  "doNotHaveAnAccount?" : "Don't have an account?",
+  "enterYourCredentialsToContinue" : "Enter your credentials to continue",
+  "userNAme" : "UserName",
+  "byContinuingYouAgreeToOurTermsOfServicesAndPrivacyPolicy." : "By continuing you agree to our Terms of Services and Privacy Policy ",
+  "byContinuingYouAgreeToOur" : "By continuing you agree to our",
+  "TermsOfServices" : "Terms of Services",
+  "And" : "and",
+  "PrivacyPolicy." : "Privacy Policy",
+  "alreadyHaveAnAccount?" : "Already have an account?"
+}

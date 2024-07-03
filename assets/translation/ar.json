@@ -1,0 +1,20 @@
+{
+  "getStared" : "هيا لنبدأ",
+  "getYourGroceriesInAsFastAsOneHour" : "احصل علي منتجاتك خلال ساعه علي الاكثر",
+  "logIn" : "تسجيل الدخول",
+  "signUp" : "تسجبل الدخول",
+  "enterYourPassword" : "ادخل الرقم السري",
+  "email" : "الايميل",
+  "password" : "الرقم السري",
+  "forgetPassword?" : "هل نسيت الرقم السري ؟",
+  "doNotHaveAnAccount?" : "هل نسيت الرقم السري ؟",
+  "enterYourCredentialsToContinue" : "أدخل بيانات الاعتماد الخاصة بك للمتابعة",
+  "userNAme" : "اسم المستخدم",
+  "byContinuingYouAgreeToOurTermsOfServicesAndPrivacyPolicy." : "عن طريق الاستمرار انت توافق علي شروط الخدمه و سيايه الخصوصيه ",
+  "byContinuingYouAgreeToOur" : "عن طريق الاستمرار انت توافق علي",
+  "TermsOfServices" : " شروط الخدمه ",
+  "And" : "و ",
+  "PrivacyPolicy." : "سياسه الخصوصيه",
+  "alreadyHaveAnAccount?" : "لديك حساب بالفعل ؟"
+}
+
