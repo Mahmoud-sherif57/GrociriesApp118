@@ -1,4 +1,4 @@
-name: grociries_app
+name: groceries_app
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -38,6 +38,9 @@ dependencies:
   flutter_bloc: ^8.1.6
   flutter_screenutil: ^5.9.3
   easy_localization: ^3.0.7
+  carousel_slider: ^4.2.1
+  salomon_bottom_bar: ^3.3.2
+  dio: ^5.5.0+1
 
 dev_dependencies:
   flutter_test:

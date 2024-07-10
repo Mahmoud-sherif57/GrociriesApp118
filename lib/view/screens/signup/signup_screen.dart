@@ -3,30 +3,33 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grociries_app/view/screens/home/counter_screen.dart';
-import 'package:grociries_app/view_model/utils/app_assets.dart';
-import 'package:grociries_app/view_model/utils/app_functions.dart';
-import '../login/login_screen.dart';
+import 'package:groceries_app/view/screens/home/home_screen.dart';
+import 'package:groceries_app/view_model/utils/app_assets.dart';
+import 'package:groceries_app/view_model/utils/app_colors.dart';
+import 'package:groceries_app/view_model/utils/app_functions.dart';
+import 'package:groceries_app/view_model/utils/local_keys.g.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _signInState();
+  State<SignupScreen> createState() => _SignInState();
 }
 
 var hidden = true;
-var unhiddenicon = Icon(Icons.visibility);
-var hiddenicon = Icon(Icons.visibility_off);
+var unHiddenIcon = const Icon(Icons.visibility);
+var hiddenIcon = const Icon(Icons.visibility_off);
 
-class _signInState extends State<SignupScreen> {
+class _SignInState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading:
-         AppFunctions.translationIcon(context)
-        ),
+        // appBar: AppBar(
+        //   leading:
+        //  // AppFunctions.translationIcon(context)
+        // ),/
+        bottomSheet: AppFunctions.translationFunction(context),
+
         body: Center(
       child: Container(
         padding: EdgeInsets.all(12.w),
@@ -46,12 +49,12 @@ class _signInState extends State<SignupScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'signUp'.tr(),
+                    LocaleKeys.signUp.tr(),
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25.sp),
                   ),
                   Text(
-                    'enterYourCredentialsToContinue'.tr(),
-                    style: TextStyle(color: Color(0xff7C7C7C)),
+                    LocaleKeys.enterYourCredentialsToContinue.tr(),
+                    style: const TextStyle(color:  AppColors.darkGray,),
                   ),
                   SizedBox(height: 25.h),
                   // making the username field
@@ -59,16 +62,16 @@ class _signInState extends State<SignupScreen> {
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
-                      labelText: 'userNAme'.tr(),
-                      labelStyle: TextStyle(color: Color(0xff7C7C7C)),
+                      labelText: LocaleKeys.userName.tr(),
+                      labelStyle: const TextStyle(color:  AppColors.darkGray,),
                     ),
                   ), // making the email field
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
-                      labelText: 'email'.tr(),
-                      labelStyle: TextStyle(color: Color(0xff7C7C7C)),
+                      labelText: LocaleKeys.email.tr(),
+                      labelStyle: const TextStyle(color:  AppColors.darkGray,),
                     ),
                   ),
                   // making the password field
@@ -79,15 +82,15 @@ class _signInState extends State<SignupScreen> {
                     decoration: InputDecoration(
                         // helperText: 'By continuing you agree to our Terms of Service and Privacy Policy.',
                         // helper: TextButton(onPressed: (){}, child: Text('forgot password ?')),
-                        labelText: 'password'.tr(),
-                        labelStyle: TextStyle(color: Color(0xff7C7C7C)),
+                        labelText: LocaleKeys.password.tr(),
+                        labelStyle: const TextStyle(color: AppColors.darkGray,),
                         suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
                                 hidden = !hidden;
                               });
                             },
-                            icon: hidden ? hiddenicon : unhiddenicon)),
+                            icon: hidden ? hiddenIcon : unHiddenIcon)),
                   ),
 
                   // To create a text widget where part of the text is clickable and the rest is not and i can change the style of every part
@@ -97,39 +100,39 @@ class _signInState extends State<SignupScreen> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'byContinuingYouAgreeToOur'.tr(),
-                          style: TextStyle(
-                            color: Color(0xff7C7C7C),
+                          text: LocaleKeys.byContinuingYouAgreeToOur.tr(),
+                          style: const TextStyle(
+                            color: AppColors.darkGray,
                           ),
                         ),
                         TextSpan(
-                            text: 'TermsOfServices'.tr(),
-                            style: TextStyle(
-                              color: Color(0xff53B175),
+                            text: LocaleKeys.termsOfServices.tr(),
+                            style: const TextStyle(
+                              color: AppColors.green,
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                       content:
                                           Text('terms of services clicked!')),
                                 );
                               }),
                         TextSpan(
-                          text: 'And'.tr(),
-                          style: TextStyle(
-                            color: Color(0xff7C7C7C),
+                          text: LocaleKeys.And.tr(),
+                          style: const TextStyle(
+                            color: AppColors.darkGray,
                           ),
                         ),
                         TextSpan(
-                            text: 'PrivacyPolicy.'.tr(),
-                            style: TextStyle(
-                              color: Color(0xff53B175),
+                            text: LocaleKeys.privacyPolicy.tr(),
+                            style: const TextStyle(
+                              color: AppColors.green,
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                     content: Text('privacy policy clicked'),
                                   ),
                                 );
@@ -142,21 +145,21 @@ class _signInState extends State<SignupScreen> {
                     height: 40.h,
                   ),
                   InkWell(onTap: (){
-                    AppFunctions.navigateTo(context,HomeScreen());
+                    AppFunctions.navigateTo(context,  const HomeScreen());
                   },
                     child: Container(
                       width: 364.w,
                       height: 67.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(19.r),
-                        color: Color(0xff53B175),
+                        color:  AppColors.green,
                       ),
                       child: Center(
                         child: Text(
-                          'signUp'.tr(),
-                          style: TextStyle(
+                          LocaleKeys.signUp.tr(),
+                          style: const TextStyle(
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: AppColors.white,
                           ),
                         ),
                       ),
@@ -168,17 +171,17 @@ class _signInState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'alreadyHaveAnAccount?'.tr(),
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    LocaleKeys.alreadyHaveAnAccount.tr(),
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                   TextButton(
                       onPressed: () {
                         AppFunctions.navigateTo(
-                            context, LoginScreen());
+                            context,  const HomeScreen());
                       },
                       child: Text(
-                        'logIn'.tr(),
-                        style: TextStyle(color: Color(0xff53B175)),
+                        LocaleKeys.logIn.tr(),
+                        style: const TextStyle(color:AppColors.green),
                       ))
                 ],
               )

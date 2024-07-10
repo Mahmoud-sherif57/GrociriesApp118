@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grociries_app/view_model/utils/app_assets.dart';
-import 'package:grociries_app/view_model/utils/app_functions.dart';
+import 'package:groceries_app/view_model/utils/app_assets.dart';
+import 'package:groceries_app/view_model/utils/app_functions.dart';
 import '../onbording/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -13,9 +13,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> onboardingScreen(),),);
-      AppFunctions.navigateTo(context, OnboardingScreen());
+      AppFunctions.navigateTo(context, const OnboardingScreen());
          });
     super.initState();
   }
@@ -23,8 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff53B175),
-      body: Center(child: Image.asset(AppAssets.splashLogo),),
+      backgroundColor: const Color(0xff53B175),
+      body: Center(child: Image.asset(AppAssets.splashLogo,fit: BoxFit.cover,),),
       // body: Center(child: Image.asset("assets/images/splash_logo.png"),),
     );
   }

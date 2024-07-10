@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AppFunctions {
-
   //1
   static navigateTo(BuildContext context, Widget screen) {
     return Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -10,7 +9,7 @@ class AppFunctions {
     }));
   }
 
- //2
+  //2
   static navigateAndReplacement(BuildContext context, Widget screen) {
     return Navigator.pushReplacement(context,
         MaterialPageRoute(builder: (context) {
@@ -18,7 +17,7 @@ class AppFunctions {
     }));
   }
 
- //3
+  //3
   static navigateAndRemove(BuildContext context, Widget screen) {
     return Navigator.pushAndRemoveUntil(
       context,
@@ -30,25 +29,23 @@ class AppFunctions {
   }
 
   //4
-  static navigatePop(BuildContext context, Widget screen){
+  static navigatePop(BuildContext context, Widget screen) {
     return Navigator.pop(context);
   }
 
   //5
-  static translationIcon (BuildContext context){
-    return
-      IconButton(onPressed: (){
-
-      if(context.locale.toString()=='ar'){
-        context.setLocale(Locale('en'));
-      }else{
-       context.setLocale(Locale('ar'));
-      }
-    }, icon:Icon( Icons.translate),
-      );
+  static translationFunction(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        if (context.locale.toString() == 'ar') {
+          context.setLocale(const Locale('en'));
+        } else {
+          context.setLocale(const Locale('ar'));
+        }
+      },
+      icon: const Icon(Icons.translate),
+    );
   }
-
-
 }
 
 //NOTES:

@@ -1,7 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grociries_app/cubits/counter/counter_state.dart';
+import 'package:groceries_app/cubits/counter/counter_state.dart';
 
 // we create our (CounterCubit) witch extends from (Cubit) ,
 class CounterCubit extends Cubit<CounterState>{
@@ -29,13 +29,15 @@ int counter =0;
     emit(DecrementCounterState());
   }
 
-  // we create this function to
+
   static CounterCubit get (context)=> BlocProvider.of<CounterCubit>(context);
 
 
   List<String> inputs = [];
 
   TextEditingController inputController = TextEditingController();
+
+  // creating our methods
 
   void addInput(){
     inputs.add(inputController.text);

@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grociries_app/cubits/counter/counter_cubit.dart';
-import 'package:grociries_app/cubits/counter/counter_state.dart';
-import 'package:grociries_app/view/screens/login/login_screen.dart';
-import 'package:grociries_app/view_model/utils/app_functions.dart';
+import 'package:groceries_app/cubits/counter/counter_cubit.dart';
+import 'package:groceries_app/cubits/counter/counter_state.dart';
+import 'package:groceries_app/view/screens/login/login_screen.dart';
+import 'package:groceries_app/view_model/utils/app_functions.dart';
 
-
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class CounterScreen extends StatelessWidget {
+  const CounterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            AppFunctions.navigateTo(context, LoginScreen() as Widget);
+            AppFunctions.navigateTo(context, const LoginScreen() as Widget);
           },
         ),
       ),
@@ -25,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 15),
           child: Column(
             children: [
-              Text(
+              const Text(
                 'Counter',
                 style: TextStyle(
                   fontSize: 24,
@@ -59,9 +58,9 @@ class HomeScreen extends StatelessWidget {
                             child: Text(CounterCubit.get(context).inputs[index]),
                         );
                       },
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       separatorBuilder: (context, index) {
-                        return Divider(thickness: 2,color: Colors.green,);
+                        return const Divider(thickness: 2,color: Colors.green,);
                       },
                       itemCount: CounterCubit.get(context).inputs.length);
                 },
@@ -75,32 +74,32 @@ class HomeScreen extends StatelessWidget {
                         // we call the the reset function form the CounterCubit
                         CounterCubit.get(context).reset();
                       },
-                      child: Icon(Icons.cleaning_services_rounded),
                       backgroundColor: Colors.green,
+                      child: const Icon(Icons.cleaning_services_rounded),
                     ),
                     FloatingActionButton(
                       onPressed: () {
                         // we call the the decrement function form the CounterCubit
                         CounterCubit.get(context).decrement();
                       },
-                      child: Icon(Icons.exposure_minus_1),
                       backgroundColor: Colors.green,
+                      child: const Icon(Icons.exposure_minus_1),
                     ),
                     FloatingActionButton(
                       onPressed: () {
                         // we call the the increment function form the CounterCubit
                         CounterCubit.get(context).increment();
                       },
-                      child: Icon(Icons.plus_one),
                       backgroundColor: Colors.green,
+                      child: const Icon(Icons.plus_one),
                     ),
                     FloatingActionButton(
                       onPressed: () {
                         // we call the the increment function form the CounterCubit
                         CounterCubit.get(context).clearCounter();
                       },
-                      child: Icon(Icons.restore_from_trash),
                       backgroundColor: Colors.green,
+                      child: const Icon(Icons.restore_from_trash),
                     ),
                   ],
                 ),
@@ -117,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                   onFieldSubmitted: (value) {
                     CounterCubit.get(context).addInput();
                   },
-                  decoration: InputDecoration(border: OutlineInputBorder(),),
+                  decoration: const InputDecoration(border: OutlineInputBorder(),),
                 ),
               )
             ],
